@@ -1,0 +1,220 @@
+[{
+  "_id": {
+    "$oid": "66356d296493c056f3933e7d"
+  },
+  "name": "Organic Avocado",
+  "description": "Fresh organic avocados from local farms.",
+  "category": "Fruits",
+  "price": 2.99,
+  "stock_quantity": 100,
+  "producer_id": "6634f4c400dcad988589f859",
+  "image": "/images/111234214.jpeg",
+  "cities_available": [
+    "Paris",
+    "Montreal",
+    "Berlin",
+    "Rome",
+    "Casablanca"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66356d786493c056f3933e7f"
+  },
+  "name": "Grass-fed Beef",
+  "description": "Premium grass-fed beef, antibiotic-free and hormone-free.",
+  "category": "Meat",
+  "price": 15.99,
+  "stock_quantity": 50,
+  "producer_id": "6634f4c400dcad988589f859",
+  "image": "/images/222346687.jpeg",
+  "cities_available": [
+    "Montreal",
+    "Berlin",
+    "Casablanca"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66356dc96493c056f3933e81"
+  },
+  "name": "Organic Kale",
+  "description": "Fresh organic kale packed with nutrients.",
+  "category": "Vegetables",
+  "price": 3.49,
+  "stock_quantity": 75,
+  "producer_id": "6634f4c400dcad988589f859",
+  "image": "/images/333421557.jpeg",
+  "cities_available": [
+    "Paris",
+    "Montreal",
+    "Rome",
+    "Casablanca"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66356e0d6493c056f3933e83"
+  },
+  "name": "Artisanal Cheese",
+  "description": "Handcrafted artisanal cheese made from locally-sourced milk.",
+  "category": "Dairy",
+  "price": 9.99,
+  "stock_quantity": 30,
+  "producer_id": "6634f4c400dcad988589f859",
+  "image": "/images/4441252.jpeg",
+  "cities_available": [
+    "Paris",
+    "Montreal",
+    "Berlin"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66356e546493c056f3933e85"
+  },
+  "name": "Organic Honey",
+  "description": "Pure organic honey harvested from local beehives.",
+  "category": "Pantry",
+  "price": 7.99,
+  "stock_quantity": 100,
+  "producer_id": "6634f4c400dcad988589f859",
+  "image": "/images/5553164368.jpeg",
+  "cities_available": [
+    "Paris",
+    "Berlin",
+    "Rome",
+    "Casablanca"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66356ea06493c056f3933e87"
+  },
+  "name": "Fresh Baguette",
+  "description": "Traditional French baguette baked daily using organic ingredients.",
+  "category": "Bakery",
+  "price": 1.99,
+  "stock_quantity": 200,
+  "producer_id": "6634f4c400dcad988589f859",
+  "image": "/images/6662377990.jpeg",
+  "cities_available": [
+    "Paris",
+    "Montreal"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66356ed96493c056f3933e89"
+  },
+  "name": "Organic Quinoa",
+  "description": "High-quality organic quinoa sourced from ethical producers.",
+  "category": "Grains",
+  "price": 6.99,
+  "stock_quantity": 50,
+  "producer_id": "6634f4c400dcad988589f859",
+  "image": "/images/77773489.jpeg",
+  "cities_available": [
+    "Montreal",
+    "Berlin",
+    "Rome"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66356f1b6493c056f3933e8b"
+  },
+  "name": "Artisanal Chocolate",
+  "description": "Handcrafted artisanal chocolate bars made with premium cocoa beans.",
+  "category": "Sweets",
+  "price": 4.99,
+  "stock_quantity": 80,
+  "producer_id": "6634f4c400dcad988589f859",
+  "image": "/images/888134748.jpeg",
+  "cities_available": [
+    "Paris",
+    "Montreal",
+    "Casablanca"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66356f726493c056f3933e8d"
+  },
+  "name": "Organic Tomatoes",
+  "description": "Locally-grown organic tomatoes picked at peak ripeness.",
+  "category": "Vegetables",
+  "price": 2.49,
+  "stock_quantity": 120,
+  "producer_id": "6634f4c400dcad988589f859",
+  "image": "/images/999236348.jpeg",
+  "cities_available": [
+    "Paris",
+    "Montreal",
+    "Rome"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66356fab6493c056f3933e8f"
+  },
+  "name": "Free-range Eggs",
+  "description": "Fresh free-range eggs from ethically-raised chickens.",
+  "category": "Dairy",
+  "price": 2.49,
+  "stock_quantity": 120,
+  "producer_id": "6634f4c400dcad988589f859",
+  "image": "/images/101010358.jpeg",
+  "cities_available": [
+    "Paris",
+    "Rome",
+    "Casablanca"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66356fef6493c056f3933e91"
+  },
+  "name": "Organic Olive Oil",
+  "description": "Extra virgin organic olive oil produced from local olive groves.",
+  "category": "Pantry",
+  "price": 8.99,
+  "stock_quantity": 90,
+  "producer_id": "6634f4c400dcad988589f859",
+  "image": "/images/111111342.jpeg",
+  "cities_available": [
+    "Paris",
+    "Rome",
+    "Berlin"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6635702a6493c056f3933e93"
+  },
+  "name": "Organic Spinach",
+  "description": "Nutrient-rich organic spinach perfect for salads and smoothies.",
+  "category": "Vegetables",
+  "price": 3.99,
+  "stock_quantity": 40,
+  "producer_id": "6634f4c400dcad988589f859",
+  "image": "/images/1212126868.jpeg",
+  "cities_available": [
+    "Paris",
+    "Montreal",
+    "Rome",
+    "Casablanca"
+  ],
+  "__v": 0
+}]

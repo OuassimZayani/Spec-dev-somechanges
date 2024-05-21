@@ -1,0 +1,59 @@
+.home_container{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    .cities_links_container{
+        // width: 100vw;
+        height: 150px;
+        .cities_links{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            list-style-type:none;
+            li{
+                list-style-type:none;
+                position: relative;
+                a{
+                    text-decoration: none;
+                    // color: #ca1eb6;
+                    color: #000;
+                }
+                a.link_selected::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: -8px;
+                    width: 100%;
+                    height: 6px;
+                    background-color: #1565c0;
+                    border-radius: 30px;
+                }
+            }
+        }
+    }
+    .products_container{
+        .title{
+            padding: 0 0 40px 6%;
+            color: #000;
+        }
+        .products{
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 55px;
+            .css-46bh2p-MuiCardContent-root{
+                padding: 16px 16px 0 16px;
+            }
+            span{
+                color: #1565c0;
+            }
+            .productCardLink{
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+.product{
+    .product_details{
+        padding: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        .product_details_img_container{
+            img{
+                width: 225px;
+                height: 225px;
+            }
+        }
+        .product_details_text_container{
+            h2{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            p{
+                font-family: sans-serif;
+            }
+        }
+        .product_details_buttons_container{
+            margin-top: 15px;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .product{
+        .product_details{
+            gap: 35px;
+            .product_details_buttons_container{
+                margin-top: 35px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 900px){
+    .product{
+        .product_details{
+            padding: 10%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            .product_details_text_container{
+                h2{
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                }
+                p{
+                    font-family: sans-serif;
+                }
+            }
+            .product_details_buttons_container{
+                margin-top: 40px;
+            }
+        }
+    }
+}

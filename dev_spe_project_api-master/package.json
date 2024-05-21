@@ -1,0 +1,27 @@
+{
+  "name": "api_project",
+  "version": "1.0.0",
+  "description": "The Foodtastic Online Shop API provides endpoints for managing products, users, carts, orders, producers, and administrative tasks. It allows clients to interact with the online shop platform to browse products, add items to carts, place orders, manage user accounts, and perform administrative functions.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/merouane667/dev_spe_project_api.git"
+  },
+  "author": "merouanehany@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/merouane667/dev_spe_project_api/issues"
+  },
+  "homepage": "https://github.com/merouane667/dev_spe_project_api#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3"
+  }
+}

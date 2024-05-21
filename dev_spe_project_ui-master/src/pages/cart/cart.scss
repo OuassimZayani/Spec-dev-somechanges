@@ -1,0 +1,35 @@
+.cart {
+    padding: 0 20px;
+  }
+  
+.cart-content {
+    margin-top: 20px;
+}
+
+.cart-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.cart-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.product-id {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.quantity, .price {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.checkout-button{
+    margin-top: 200px;
+}
+.total-price_number{
+    color: #1565c0;
+}

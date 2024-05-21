@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    // width: 100vw;
+    height: 60px;
+    .logo_container{
+        width: 25vw;
+        height: 100%;
+        img{
+            height: 80%;
+            width: 25vw;
+        }
+    }
+    .login_register_container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40vw;
+        height: 100%;
+        .search_input{
+
+        }
+    }
+    .links_container{
+        width: 17vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a span{
+            color: #000;
+        }
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 600px) {
+    .header_container{
+        height: 70px;
+        .logo_container{
+            width: 20vw;
+            img{
+                width: 20vw;
+            }
+        }
+        .login_register_container{
+            width: 45vw;
+            .search_input{
+    
+            }
+        }
+        .links_container{
+            width: 14vw;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .header_container{
+        height: 70px;
+        .logo_container{
+            width: 15vw;
+            img{
+                width: 15vw;
+            }
+        }
+        .login_register_container{
+            width: 45vw;
+            .search_input{
+    
+            }
+        }
+        .links_container{
+            width: 11vw;
+        }
+    }
+}
+
+@media screen and (min-width: 900px){
+    .header_container{
+        height: 70px;
+        .logo_container{
+            width: 10vw;
+            img{
+                width: 10vw;
+            }
+        }
+        .login_register_container{
+            width: 35vw;
+            .search_input{
+    
+            }
+        }
+        .links_container{
+            width: 7vw;
+        }
+    }
+}
