@@ -51,19 +51,19 @@ const Product = () => {
             },
             body: JSON.stringify(requestData),
         })
-        .then(response => {
-            if (response.ok) {
-                // Show success message
-                successNotify();
-            } else {
-                throw new Error('Failed to add product to cart');
-            }
-        })
-        .catch(error => {
-            console.error('Error adding product to cart:', error);
-            // Show error message
-            alert('Failed to add product to cart');
-        });
+            .then(response => {
+                if (response.ok) {
+                    // Show success message
+                    successNotify();
+                } else {
+                    throw new Error('Failed to add product to cart');
+                }
+            })
+            .catch(error => {
+                console.error('Error adding product to cart:', error);
+                // Show error message
+                alert('Failed to add product to cart');
+            });
     };
 
     return (
@@ -73,25 +73,25 @@ const Product = () => {
             {product && (
                 <div className="product_details">
                     <div className="product_details_img_container">
-                      <img src={`http://localhost:5000/${product.image}`} alt={product.name} />
+                        <img src={`http://localhost:5000/${product.image}`} alt={product.name} />
                     </div>
 
                     <div className="product_details_info_container">
-                      <div className="product_details_text_container">
-                        <h2>{product.name}</h2>
-                        <p>Description: {product.description}</p>
-                        <p>Category: {product.category}</p>
-                        <p>Price: {product.price}$</p>
-                        <p>Stock Quantity: {product.stock_quantity}</p>
-                        <p>Cities Available: {product.cities_available.join(', ')}</p>
-                      </div>
-                      <div className="product_details_buttons_container">
-                        <Stack direction="row" spacing={2}>
-                          <Button variant="contained" startIcon={<ShoppingCartIcon />} onClick={handleAddToCart}>
-                            Add to cart
-                          </Button>
-                        </Stack>
-                      </div>
+                        <div className="product_details_text_container">
+                            <h2>{product.name}</h2>
+                            <p>Description: {product.description}</p>
+                            <p>Category: {product.category}</p>
+                            <p>Price: {product.price}$</p>
+                            <p>Stock Quantity: {product.stock_quantity}</p>
+                            <p>Cities Available: {product.cities_available.join(', ')}</p>
+                        </div>
+                        <div className="product_details_buttons_container">
+                            <Stack direction="row" spacing={2}>
+                                <Button variant="contained" startIcon={<ShoppingCartIcon />} onClick={handleAddToCart}>
+                                    Add to cart
+                                </Button>
+                            </Stack>
+                        </div>
                     </div>
                 </div>
             )}

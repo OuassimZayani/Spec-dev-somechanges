@@ -45,7 +45,7 @@ const Profile = () => {
       const updatedUser = await response.json();
       localStorage.setItem('userData', JSON.stringify({ ...user, user: updatedUser.user }));
       setEditField(null);
-      alert('Profile updated successfully');
+      // alert('Profile updated successfully');
     } catch (error) {
       console.error(error);
       alert('An error occurred. Please try again.');

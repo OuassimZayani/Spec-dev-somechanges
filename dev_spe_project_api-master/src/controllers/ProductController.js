@@ -28,19 +28,19 @@ exports.createProduct = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
+//original getProducts controller with no query
+// exports.getProducts = async (req, res) => {
+//   try {
+//     // Retrieve all products from the database
+//     const products = await Product.find();
 
-exports.getProducts = async (req, res) => {
-  try {
-    // Retrieve all products from the database
-    const products = await Product.find();
-
-    // Return the list of products
-    res.status(200).json({ products });
-  } catch (error) {
-    console.error(error);
-    res.status(404).json({ error: 'No product found' });
-  }
-};
+//     // Return the list of products
+//     res.status(200).json({ products });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(404).json({ error: 'No product found' });
+//   }
+// };
 
 exports.getOneProduct = async (req, res) => {
   try {
@@ -56,5 +56,32 @@ exports.getOneProduct = async (req, res) => {
     res.status(404).json({ error: 'Product not found' });
   }
 };
+//new getProducts controller with query Filtering
+exports.getProducts = async (req, res) => {
+  try {
+    const { category, minPrice, maxPrice, region } = req.query;
+    let query = {};
 
-//delete & update product
+    if (category) {
+      query.category = category;
+    }
+
+    if (minPrice) {
+      query.price = { ...query.price, $gte: parseFloat(minPrice) };
+    }
+
+    if (maxPrice) {
+      query.price = { ...query.price, $lte: parseFloat(maxPrice) };
+    }
+
+    if (region && region !== "all_regions") {
+      query.cities_available = { $in: [region] };
+    }
+
+    const products = await Product.find(query);
+    res.status(200).json({ products });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};

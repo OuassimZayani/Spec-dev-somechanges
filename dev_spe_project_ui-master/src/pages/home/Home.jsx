@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './home.scss';
 import Header from '../../components/header/Header';
 import Card from '@mui/material/Card';
@@ -9,72 +10,96 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  // State to store the retrieved products
   const [products, setProducts] = useState([]);
-  // State to store the selected city
-  const [selectedCity, setSelectedCity] = useState("all_cities");
-  // State to store filtered products
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [category, setCategory] = useState('');
+  const [minPrice, setMinPrice] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
+  const [region, setRegion] = useState('all_regions');
+
   useEffect(() => {
-    fetch('http://localhost:5000/products')
-      .then(response => response.json())
-      .then(data => {
-        setProducts(data.products);
-        setFilteredProducts(data.products);
-      })
-      .catch(error => console.error('Error fetching products:', error));
-  }, []);
+    fetchProducts();
+  }, [region]);// Add inside Array for Automatic Filtering:  category, minPrice, maxPrice 
 
-  // Function to handle click on city links
-  const handleCityClick = (city) => {
-    setSelectedCity(city);
-    filterProducts(city); // Filter products based on the selected city
-  };
 
-  // Function to capitalize the first letter of a string
-  const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  };
-
-  // Function to filter products based on selected city
-  const filterProducts = (city) => {
-    // Capitalize the first letter of the city
-    const capitalizedCity = city === "all_cities" ? city : capitalizeFirstLetter(city);
-
-    if (city === "all_cities") {
-      // If "All cities" is selected, show all products
-      setFilteredProducts(products);
-    } else {
-      // Otherwise, filter products based on selected city
-      const filtered = products.filter(product => product.cities_available.includes(capitalizedCity));
-      setFilteredProducts(filtered);
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/products', {
+        params: {
+          category,
+          minPrice,
+          maxPrice,
+          region,
+        },
+      });
+      setProducts(response.data.products);
+      setFilteredProducts(response.data.products);
+    } catch (error) {
+      console.error('Error fetching products', error);
     }
+  };
+
+  const handleFilterChange = () => {
+    fetchProducts();
   };
 
   return (
     <div className='home_container'>
       <Header />
-      <div className="cities_links_container">
-        <ul className="cities_links">
-          <li className="all_cities">
-            <a href="#" onClick={() => handleCityClick("all_cities")} className={selectedCity === "all_cities" ? "link_selected" : ""}>All cities</a>
-          </li>
-          <li className="paris">
-            <a href="#" onClick={() => handleCityClick("paris")} className={selectedCity === "paris" ? "link_selected" : ""}>Paris</a>
-          </li>
-          <li className="montreal">
-            <a href="#" onClick={() => handleCityClick("montreal")} className={selectedCity === "montreal" ? "link_selected" : ""}>Montreal</a>
-          </li>
-          <li className="berlin">
-            <a href="#" onClick={() => handleCityClick("berlin")} className={selectedCity === "berlin" ? "link_selected" : ""}>Berlin</a>
-          </li>
-          <li className="rome">
-            <a href="#" onClick={() => handleCityClick("rome")} className={selectedCity === "rome" ? "link_selected" : ""}>Rome</a>
-          </li>
-          <li className="casablanca">
-            <a href="#" onClick={() => handleCityClick("casablanca")} className={selectedCity === "casablanca" ? "link_selected" : ""}>Casa</a>
-          </li>
-        </ul>
+      <div className="filter_container">
+        <div className="filter">
+          <label>
+            Region:
+            <select value={region} onChange={(e) => setRegion(e.target.value)}>
+              <option value="all_regions">All Regions</option>
+              <option value="Casablanca">Casablanca</option>
+              <option value="Paris">Paris</option>
+              <option value="Montreal">Montreal</option>
+              <option value="Berlin">Berlin</option>
+              <option value="Rome">Rome</option>
+              {/* Add more regions as needed */}
+            </select>
+          </label>
+        </div>
+        <div className="filter">
+          <label>
+            Category:
+            <select value={category} onChange={(e) => setCategory(e.target.value)}>
+              <option value="">All</option>
+              <option value="Fruits">Fruits</option>
+              <option value="Vegetables">Vegetables</option>
+              <option value="Dairy">Dairy</option>
+              <option value="Meat">Meat</option>
+              <option value="Pantry">Pantry</option>
+              <option value="Bakery">Bakery</option>
+              <option value="Grains">Grains</option>
+              <option value="Sweets">Sweets</option>
+              {/* Add more categories as needed */}
+            </select>
+          </label>
+        </div>
+        <div className="filter">
+          <label>
+            Min Price:
+            <input
+              type="number"
+              value={minPrice}
+              onChange={(e) => setMinPrice(e.target.value)}
+            />
+          </label>
+        </div>
+        <div className="filter">
+          <label>
+            Max Price:
+            <input
+              type="number"
+              value={maxPrice}
+              onChange={(e) => setMaxPrice(e.target.value)}
+            />
+          </label>
+        </div>
+
+        <Button onClick={handleFilterChange}>Apply Filters</Button>
       </div>
       <div className="products_container">
         <div className="title">

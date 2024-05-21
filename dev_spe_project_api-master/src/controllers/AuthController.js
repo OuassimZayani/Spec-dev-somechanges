@@ -99,12 +99,12 @@ exports.updateUser = async (req, res) => {
     if (updates.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(updates.email)) {
       return res.status(400).json({ error: 'Invalid email address.' });
     }
-    if (phone_number && !/^[0-9]+$/.test(phone_number)) {
-      return res.status(400).json({ error: 'Phone number must only contain numerical characters.' });
-    }
-    if (address && !/^[a-zA-Z0-9\s,]+$/.test(address)) {
-      return res.status(400).json({ error: 'Invalid address.' });
-    }
+    // if (phone_number && !/^[0-9]+$/.test(phone_number)) {
+    //   return res.status(400).json({ error: 'Phone number must only contain numerical characters.' });
+    // }
+    // if (address && !/^[a-zA-Z0-9\s,]+$/.test(address)) {
+    //   return res.status(400).json({ error: 'Invalid address.' });
+    // }
 
 
     const user = await User.findByIdAndUpdate(userId, updates, { new: true });

@@ -16,6 +16,8 @@ router.post('/product', ProductController.createProduct);
 router.get('/products', ProductController.getProducts);
 router.get('/products/:id', ProductController.getOneProduct);
 
+
+
 //Producer
 router.post('/producer', ProducerController.createProducer);
 router.get('/producers', ProducerController.getProducers);
